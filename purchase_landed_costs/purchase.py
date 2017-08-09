@@ -588,7 +588,7 @@ class purchase_order(orm.Model):
         return {
             'currency_id': currency_id,
             'partner_id': landed_cost.partner_id.id,
-            'account_id': landed_cost.partner_id.property_account_payable.id,
+            'account_id': landed_cost.partner_id.property_account_payable_id.id,
             'type': 'in_invoice',
             'origin': po.name,
             'fiscal_position': fiscal_position_id,
