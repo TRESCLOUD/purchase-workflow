@@ -2,7 +2,8 @@
 # Copyright 2016 Eficent Business and IT Consulting Services S.L.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl-3.0).
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
+from odoo.exceptions import RedirectWarning, UserError, ValidationError
 import odoo.addons.decimal_precision as dp
 
 _STATES = [
@@ -129,6 +130,14 @@ class PurchaseRequest(models.Model):
             if vals.get('assigned_to'):
                 self.message_subscribe_users(user_ids=[request.assigned_to.id])
         return res
+    
+    @api.multi
+    def unlink(self):
+        for record in self:
+            if record.state != 'draft':
+                raise UserError(_("You can only erase a purchase request in draft state: %s.") % str(record.name))
+            record.line_ids.unlink() #erase detail (safer than ondelete cascade)
+        return super(PurchaseRequest, self).unlink()
 
     @api.multi
     def button_draft(self):
@@ -207,7 +216,7 @@ class PurchaseRequestLine(models.Model):
                                    'Product Unit of Measure'))
     request_id = fields.Many2one('purchase.request',
                                  'Purchase Request',
-                                 ondelete='cascade', readonly=True)
+                                 readonly=True)
     company_id = fields.Many2one('res.company',
                                  related='request_id.company_id',
                                  string='Company',

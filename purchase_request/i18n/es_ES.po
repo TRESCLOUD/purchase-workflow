@@ -551,3 +551,10 @@ msgstr ""
 #: model:ir.model.fields,field_description:purchase_request.field_purchase_request_message_unread_counter
 msgid "Unread Messages Counter"
 msgstr ""
+
+#. module: purchase_request
+#: code:addons/purchase_request/models/purchase_request.py:138
+#, python-format
+msgid "You can only erase a purchase request in draft state: %s."
+msgstr "Solo puede eliminar requerimientos de compra en estado borrador: %s."
+
