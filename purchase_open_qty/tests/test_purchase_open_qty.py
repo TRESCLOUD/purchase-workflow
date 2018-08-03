@@ -18,12 +18,12 @@ class TestPurchaseOpenQty(TransactionCase):
 
         # partners
         pa_dict = {
-            'name': 'Partner 1',
+            'name': 'Partner one',
             'supplier': True,
         }
         self.partner = partner_model.sudo().create(pa_dict)
         pa_dict2 = {
-            'name': 'Partner 2',
+            'name': 'Partner two',
             'supplier': True,
         }
         self.partner2 = partner_model.sudo().create(pa_dict2)
