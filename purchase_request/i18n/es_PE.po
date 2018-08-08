@@ -1,21 +1,23 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * purchase_request
-# 
+#
 # Translators:
+# Henry Garcia <henry@yaroslab.com>, 2017
 # Henry Garcia <henry@yaroslab.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: purchase-workflow (10.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-15 06:42+0000\n"
-"PO-Revision-Date: 2017-08-13 22:25+0000\n"
-"Last-Translator: Henry Garcia <henry@yaroslab.com>\n"
-"Language-Team: Spanish (Peru) (http://www.transifex.com/oca/OCA-purchase-workflow-10-0/language/es_PE/)\n"
+"POT-Creation-Date: 2017-11-24 07:53+0000\n"
+"PO-Revision-Date: 2017-11-24 07:55+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
+"Language-Team: Spanish (Peru) (http://www.transifex.com/oca/OCA-purchase-"
+"workflow-10-0/language/es_PE/)\n"
+"Language: es_PE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es_PE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: purchase_request
@@ -89,7 +91,10 @@ msgid ""
 "A purchase request is an instruction to Purchasing to procure\n"
 "                a certain quantity of materials services, so that they are\n"
 "                available at a certain point in time."
-msgstr "Una solicitud de compra es una instrucción de compra para adquirir una cierta cantidad de servicios de materiales, de modo que estén disponibles en un determinado momento."
+msgstr ""
+"Una solicitud de compra es una instrucción de compra para adquirir una "
+"cierta cantidad de servicios de materiales, de modo que estén disponibles en "
+"un determinado momento."
 
 #. module: purchase_request
 #: model:ir.model.fields,field_description:purchase_request.field_purchase_request_line_analytic_account_id
@@ -126,6 +131,11 @@ msgstr "Asignado a"
 #: model:ir.ui.view,arch_db:purchase_request.view_purchase_request_search
 msgid "Assigned to me"
 msgstr "Asignado a mí"
+
+#. module: purchase_request
+#: model:ir.model.fields,field_description:purchase_request.field_purchase_request_line_cancelled
+msgid "Cancelled"
+msgstr ""
 
 #. module: purchase_request
 #: model:ir.actions.act_window,help:purchase_request.purchase_request_form_action
@@ -175,6 +185,13 @@ msgid "Display Name"
 msgstr "Nombre a mostrar"
 
 #. module: purchase_request
+#: model:ir.ui.view,arch_db:purchase_request.view_purchase_request_form
+#: model:ir.ui.view,arch_db:purchase_request.view_purchase_request_search
+#: selection:purchase.request,state:0
+msgid "Done"
+msgstr ""
+
+#. module: purchase_request
 #: model:ir.ui.view,arch_db:purchase_request.purchase_request_line_search
 #: model:ir.ui.view,arch_db:purchase_request.view_purchase_request_search
 #: selection:purchase.request,state:0
@@ -216,6 +233,11 @@ msgstr "Última actualización realizada por"
 #: model:ir.model.fields,field_description:purchase_request.field_purchase_request_write_date
 msgid "Last Updated on"
 msgstr "Última actualización"
+
+#. module: purchase_request
+#: model:ir.ui.view,arch_db:purchase_request.view_purchase_request_form
+msgid "Lines"
+msgstr ""
 
 #. module: purchase_request
 #: model:ir.ui.view,arch_db:purchase_request.purchase_request_line_search
@@ -279,6 +301,12 @@ msgid "Purchase Request Line"
 msgstr "Linea de solicitud de compra"
 
 #. module: purchase_request
+#: model:ir.model.fields,field_description:purchase_request.field_purchase_request_line_count
+#, fuzzy
+msgid "Purchase Request Line count"
+msgstr "Linea de solicitud de compra"
+
+#. module: purchase_request
 #: model:ir.actions.act_window,name:purchase_request.purchase_request_line_form_action
 #: model:ir.ui.menu,name:purchase_request.menu_purchase_request_line
 #: model:ir.ui.menu,name:purchase_request.menu_purchase_request_line_act
@@ -292,11 +320,6 @@ msgid "Purchase Request Manager"
 msgstr "Administrador de solicitud de compra"
 
 #. module: purchase_request
-#: model:mail.message.subtype,description:purchase_request.mt_request_rejected
-msgid "Purchase Request Rejected"
-msgstr "Solicitud compra rechazada"
-
-#. module: purchase_request
 #: model:res.groups,name:purchase_request.group_purchase_request_user
 msgid "Purchase Request User"
 msgstr "Usuario de la solicitud de compra"
@@ -308,6 +331,17 @@ msgid "Purchase Request approved"
 msgstr "Solicitud de compra aprobada"
 
 #. module: purchase_request
+#: model:mail.message.subtype,name:purchase_request.mt_request_done
+msgid "Purchase Request done"
+msgstr ""
+
+#. module: purchase_request
+#: model:mail.message.subtype,description:purchase_request.mt_request_done
+msgid "Purchase Request is done"
+msgstr ""
+
+#. module: purchase_request
+#: model:mail.message.subtype,description:purchase_request.mt_request_rejected
 #: model:mail.message.subtype,name:purchase_request.mt_request_rejected
 msgid "Purchase Request rejected"
 msgstr "Solicitud de compra rechazada"
@@ -370,6 +404,11 @@ msgstr "Solicitar aprobación"
 #: model:ir.ui.view,arch_db:purchase_request.view_purchase_request_search
 msgid "Request is approved"
 msgstr "Solicitud está aprobada"
+
+#. module: purchase_request
+#: model:ir.ui.view,arch_db:purchase_request.view_purchase_request_search
+msgid "Request is done"
+msgstr ""
 
 #. module: purchase_request
 #: model:ir.ui.view,arch_db:purchase_request.purchase_request_line_search
@@ -447,6 +486,11 @@ msgid "To Approve"
 msgstr "Aprobar"
 
 #. module: purchase_request
+#: model:ir.model.fields,field_description:purchase_request.field_purchase_request_to_approve_allowed
+msgid "To approve allowed"
+msgstr ""
+
+#. module: purchase_request
 #: selection:purchase.request,state:0
 msgid "To be approved"
 msgstr "Para ser aprobado"
@@ -462,6 +506,18 @@ msgid "Unassigned Request"
 msgstr "Solicitud sin asignar"
 
 #. module: purchase_request
+#: model:ir.ui.view,arch_db:purchase_request.purchase_request_line_search
+msgid "Uncancelled"
+msgstr ""
+
+#. module: purchase_request
 #: model:ir.ui.view,arch_db:purchase_request.view_purchase_request_search
 msgid "Unread Messages"
 msgstr "Mensajes no leídos"
+
+#. module: purchase_request
+#: code:addons/purchase_request/models/purchase_request.py:213
+#, python-format
+msgid ""
+"You can't request an approval for a purchase request which is empty. (%s)"
+msgstr ""
