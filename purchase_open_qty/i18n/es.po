@@ -1,7 +1,9 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* purchase_open_qty
+# * purchase_open_qty
 #
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
@@ -25,6 +27,15 @@ msgstr "Para facturar"
 msgid "Pending Qty to Receive"
 msgstr "Por recibir"
 
+#. module: purchase_open_qty
+#: model:ir.model,name:purchase_open_qty.model_purchase_order
+msgid "Purchase Order"
+msgstr "Orden de Compra"
+
+#. module: purchase_open_qty
+#: model:ir.model,name:purchase_open_qty.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Línea orden de compra"
 
 #. module: purchase_open_qty
 #: model:ir.model.fields,field_description:purchase_open_qty.field_purchase_order_line_qty_to_invoice
@@ -37,4 +48,3 @@ msgstr "Cant. a facturar"
 #: model:ir.model.fields,field_description:purchase_open_qty.field_purchase_order_qty_to_receive
 msgid "Qty to Receive"
 msgstr "Cant. a recibir"
-

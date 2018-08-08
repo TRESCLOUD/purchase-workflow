@@ -30,7 +30,7 @@ class PurchaseReport(models.Model):
         :rtype: str
         :return: SQL expression for discounted unit price.
         """
-        return '(1 - l.discount / 100) * l.price_unit '
+        return '(1.0 - COALESCE(l.discount, 0.0) / 100.0) * l.price_unit '
 
     @api.model_cr
     def init(self):
@@ -56,6 +56,7 @@ class PurchaseReport(models.Model):
         )
         # Re-create view
         tools.drop_view_if_exists(self._cr, self._table)
+        # pylint: disable=sql-injection
         self._cr.execute("create or replace view {} as ({})".format(
             self._table, view_def,
         ))
