@@ -148,14 +148,23 @@ class PurchaseRequest(models.Model):
                     for line in rec.line_ids
                 ])
             )
-
+    
+    #Metodo agregado por Trescloud        
+    @api.model
+    def _copy_get_next_sequence(self):
+        '''
+        Hook sera modificado en un metodo superior 
+        '''
+        return self.env['ir.sequence'].next_by_code('purchase.request'),
+        
     @api.multi
     def copy(self, default=None):
         default = dict(default or {})
         self.ensure_one()
         default.update({
             'state': 'draft',
-            'name': self.env['ir.sequence'].next_by_code('purchase.request'),
+            #siguiente line fue modificado por trescloud
+            'name': self._copy_get_next_sequence(),
         })
         return super(PurchaseRequest, self).copy(default)
 
