@@ -101,8 +101,8 @@ TODO/Ideas:
  * Compute a average purchase price per products while keep cost price as it is
    now
 
- Contributors:
- -------------
+Contributors:
+-------------
 
   * Joël Grand-Guillaume <joel.grand-guillaume@camptocamp.com>
   * Ferdinand Gasauer <ferdinand.gasauer@camptocamp.com>
