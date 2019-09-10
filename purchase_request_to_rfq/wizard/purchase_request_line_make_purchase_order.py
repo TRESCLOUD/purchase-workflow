@@ -244,7 +244,7 @@ class PurchaseRequestLineMakePurchaseOrder(models.TransientModel):
             po_line._onchange_quantity()
             # The onchange quantity is altering the scheduled date of the PO
             # lines. We do not want that:
-            po_line.date_planned = item.line_id.date_required
+            po_line.date_planned = item.line_id.date_required + ' ' + purchase.date_order.split(' ')[1]
             res.append(purchase.id)
 
         return {
