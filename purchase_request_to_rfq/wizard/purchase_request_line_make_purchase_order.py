@@ -212,13 +212,11 @@ class PurchaseRequestLineMakePurchaseOrder(models.TransientModel):
                 raise exceptions.Warning(
                     _('Enter a positive quantity.'))
 
-            location = line.request_id.picking_type_id.default_location_dest_id
             if self.purchase_order_id:
                 purchase = self.purchase_order_id
             if not purchase:
-                po_data = self._prepare_purchase_order(
-                    line.request_id.picking_type_id, location,
-                    line.company_id)
+                #Metodo modificado por Trescloud
+                po_data = self._prepare_purchase_order_vals(line)
                 purchase = purchase_obj.create(po_data)
 
             # Look for any other PO line in the selected PO with same
@@ -257,7 +255,13 @@ class PurchaseRequestLineMakePurchaseOrder(models.TransientModel):
             'context': False,
             'type': 'ir.actions.act_window'
         }
-
+        
+    @api.model
+    def _prepare_purchase_order_vals(self, line):
+        '''
+        Metodo hook va ser modificado en aditmaq
+        '''
+        return self._prepare_purchase_order(line.request_id.picking_type_id, line.request_id.picking_type_id.default_location_dest_id, line.company_id)
 
 class PurchaseRequestLineMakePurchaseOrderItem(models.TransientModel):
     _name = "purchase.request.line.make.purchase.order.item"
