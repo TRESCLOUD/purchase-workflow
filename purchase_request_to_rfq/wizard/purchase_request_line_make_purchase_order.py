@@ -244,7 +244,8 @@ class PurchaseRequestLineMakePurchaseOrder(models.TransientModel):
             # lines. We do not want that:
             po_line.date_planned = item.line_id.date_required + ' ' + purchase.date_order.split(' ')[1]
             res.append(purchase.id)
-
+        #La siguiente linea fue agregada por Trescloud
+        self.update_origin_with_project(purchase)
         return {
             'domain': [('id', 'in', res)],
             'name': _('RFQ'),
@@ -255,7 +256,14 @@ class PurchaseRequestLineMakePurchaseOrder(models.TransientModel):
             'context': False,
             'type': 'ir.actions.act_window'
         }
-        
+
+    @api.model
+    def update_origin_with_project(self, purchase):
+        '''
+        Metodo hook va ser modificado en ejeproy
+        '''
+        return True
+
     @api.model
     def _prepare_purchase_order_vals(self, line):
         '''
