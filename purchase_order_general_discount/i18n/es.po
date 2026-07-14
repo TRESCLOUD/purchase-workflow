@@ -7,24 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-28 12:50+0000\n"
-"PO-Revision-Date: 2023-12-29 10:35+0000\n"
-"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
+"PO-Revision-Date: 2026-04-19 09:31+0000\n"
+"Last-Translator: Ed-Spain <eduamoros@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
-
-#. module: purchase_order_general_discount
-#: model_terms:ir.ui.view,arch_db:purchase_order_general_discount.res_config_settings_view_form_purchase
-msgid ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" groups=\"base.group_multi_company\"/>"
-msgstr ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Los valores establecidos aquí "
-"son específicos para cada compañía.\" groups=\"base.group_multi_company\"/>"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: purchase_order_general_discount
 #: model:ir.model,name:purchase_order_general_discount.model_res_company
@@ -39,21 +30,18 @@ msgstr "Contacto"
 #. module: purchase_order_general_discount
 #. odoo-python
 #: code:addons/purchase_order_general_discount/models/res_company.py:0
-#, python-format
 msgid "Discount"
 msgstr "Descuento"
 
 #. module: purchase_order_general_discount
 #. odoo-python
 #: code:addons/purchase_order_general_discount/models/res_company.py:0
-#, python-format
 msgid "Discount 2"
 msgstr "Descuento 2"
 
 #. module: purchase_order_general_discount
 #. odoo-python
 #: code:addons/purchase_order_general_discount/models/res_company.py:0
-#, python-format
 msgid "Discount 3"
 msgstr "Descuento 3"
 
@@ -111,6 +99,19 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:purchase_order_general_discount.purchase_order_form
 msgid "Update general discounts"
 msgstr "Actualizar descuento general"
+
+#. module: purchase_order_general_discount
+#: model_terms:ir.ui.view,arch_db:purchase_order_general_discount.res_config_settings_view_form_purchase
+msgid "Values set here are company-specific."
+msgstr "Los valores establecidos aquí son específicos de la empresa."
+
+#~ msgid ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are "
+#~ "company-specific.\" groups=\"base.group_multi_company\"/>"
+#~ msgstr ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"Los valores establecidos "
+#~ "aquí son específicos para cada compañía.\" "
+#~ "groups=\"base.group_multi_company\"/>"
 
 #~ msgid "Field"
 #~ msgstr "Campo"
