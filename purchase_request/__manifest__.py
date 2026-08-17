@@ -2,9 +2,9 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl-3.0).
 
 {
-    "name": "Purchase Request",
+    "name": "Purchase Request (Beta pre-20)",
     "author": "ForgeFlow, Odoo Community Association (OCA)",
-    "version": "19.0.1.0.2",
+    "version": "1.0",
     "summary": "Use this module to have notification of requirements of "
     "materials and/or external services and keep track of such "
     "requirements.",
@@ -13,7 +13,7 @@
     "depends": ["purchase_stock"],
     "data": [
         "security/purchase_request.xml",
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "data/purchase_request_sequence.xml",
         "data/purchase_request_data.xml",
         "reports/report_purchase_request.xml",
