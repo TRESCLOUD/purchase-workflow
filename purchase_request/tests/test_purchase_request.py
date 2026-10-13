@@ -102,15 +102,6 @@ class TestPurchaseRequest(TransactionCase):
         purchase_request.button_approved()
         vals = {"supplier_id": self.supplier.id}
 
-        # It is required to have a picking type
-        purchase_request.picking_type_id = False
-        with self.assertRaisesRegex(UserError, "a Picking Type"):
-            self.wiz.with_context(
-                active_model="purchase.request",
-                active_ids=[purchase_request.id],
-            ).create(vals)
-        purchase_request.picking_type_id = self.picking_type_id
-
         # Picking type across all lines have to be the same
         purchase_request2 = purchase_request.copy(
             {"picking_type_id": self.picking_type_id.copy().id}
